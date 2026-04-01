@@ -66,17 +66,30 @@ namespace GeoFigures
 
             //            Rectangle rectangle2 = new Rectangle(5, 10);
 
+            //List<Shape> figures = new List<Shape>();
+
+            //figures.Add(new Circle(5));
+            //figures.Add(new Triangle(5, 10));
+            //figures.Add(new Rectangle(5, 10));
+
+            //for (int i = 0; i < figures.Count; i++)
+            //{
+            //    Console.WriteLine("Area of figure " + (i + 1) + ": " + figures[i].GetArea());
+            //    Console.WriteLine("Perimeter of figure " + (i + 1) + ": " + figures[i].GetPerimeter());
+
+            //}
+
             List<Shape> figures = new List<Shape>();
 
             figures.Add(new Circle(5));
             figures.Add(new Triangle(5, 10));
             figures.Add(new Rectangle(5, 10));
 
-            foreach (var figure in figures)
-            {
-                Console.WriteLine($"Area: {figure.GetArea()}");
-                Console.WriteLine($"Perimeter: {figure.GetPerimeter()}");
-            }
+            double totalArea = ShapeHelper.CalculateArea(figures);
+            double totalPerimeter = ShapeHelper.CalculatePerimeter(figures);
+
+            Console.WriteLine($"Total figures area: {totalArea}, total figures perimeter {totalPerimeter}");
+
         }
     }
 }
