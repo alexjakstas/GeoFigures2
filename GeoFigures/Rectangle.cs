@@ -5,7 +5,7 @@ using System.Threading.Channels;
 
 namespace GeoFigures
 {
-    internal class Rectangle
+    internal class Rectangle : Shape
     {
         private double _width;
         private double _height;
@@ -38,16 +38,21 @@ namespace GeoFigures
             } 
         }
 
-        public static double GetArea(Rectangle rectangle)
+        public override double GetArea()
         {
-            return rectangle.Width * rectangle.Height;
+            return this.Width * this.Height;
         }
 
-        public static double GetPerimeter(Rectangle rectangle)
+        public override double GetPerimeter()
         {
-            return (rectangle.Width + rectangle.Height) * 2;
+            return (this.Width + this.Height) * 2;
         }
-    
+
+        public Rectangle()
+        {
+           
+        }
+
         public  Rectangle(double rectangleWidth, double rectangleHeight)
         {
             Width = rectangleWidth;

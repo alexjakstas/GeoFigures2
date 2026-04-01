@@ -4,20 +4,24 @@ using System.Text;
 
 namespace GeoFigures
 {
-    internal class Circle
+    internal class Circle : Shape
     {
         public double Radius { get; set; }
 
     
 
-        public static double GetArea(Circle c)
+        public override double GetArea()
         {
-            return Math.PI * c.Radius * c.Radius;
+            return Math.PI * this.Radius * this.Radius;
         }
   
-        public static double GetPerimeter(Circle c)
+        public override double GetPerimeter()
         {
-            return 2 * c.Radius * Math.PI;
+            return 2 * this.Radius * Math.PI;
+        }
+
+        public Circle()
+        {
         }
 
         public Circle(double radius)

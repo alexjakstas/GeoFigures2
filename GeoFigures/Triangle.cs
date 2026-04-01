@@ -4,19 +4,22 @@ using System.Text;
 
 namespace GeoFigures
 {
-    internal class Triangle
+    internal class Triangle : Shape
     {
         public double Base { get; set; }
         public double Height { get; set; }
 
-        public static double GetArea(Triangle triangle)
+        public override double GetArea()
         {
-            return triangle.Base * triangle.Height / 2;
+            return this.Base * this.Height / 2;
         }
 
-        public static double GetPerimeter(Triangle triangle)
+        public override double GetPerimeter()
         {
-            return triangle.Base * 3;
+            return this.Base * 3;
+        }
+        public Triangle()
+        {
         }
 
         public Triangle(double triabeBase, double triangleHeight)
